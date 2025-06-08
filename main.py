@@ -19,10 +19,6 @@ class AnalayzeBankTransactionRequest(BaseModel):
 
 app = FastAPI()
 
-@app.get("/")
-def index():
-    return {"details": f"Hello World - {env["OPENAI_KEY"]}"}
-
 @app.post("/analyze-bank-transactions")
 def analyze_bank_transactions(request: AnalayzeBankTransactionRequest):
     client = OpenAI(api_key=env["OPENAI_KEY"])
