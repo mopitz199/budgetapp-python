@@ -3,6 +3,7 @@ version: '3'
 services:
   web:
     build: .
+    restart: on-failure
     command: sh -c "uvicorn main:app --reload --port=8080 --host=0.0.0.0"
     env_file:
       - .env
